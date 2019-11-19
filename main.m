@@ -3,7 +3,7 @@
 
 
 clear all
-addpath(genpath('../CryoGrid/modules'))
+addpath(genpath('./CryoGrid/modules'))
 
 % profile on
 

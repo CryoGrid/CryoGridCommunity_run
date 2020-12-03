@@ -17,7 +17,7 @@ Then get the main CryoGrid code  from the separate github repository [CryoGrid/C
 
 ### Using git
 
-To run example model:
+Alternatively, you can obtain the code using git. To run example model:
 
 1. Clone the CryoGridExamples repository to a new directory (fx `c:\my_matlab_code\cryogrid`): 
 

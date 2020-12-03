@@ -1,4 +1,4 @@
-modules_path = 'modules';
+modules_path = 'CryoGrid/modules';
 addpath(genpath(modules_path));
 
 init_format = 'EXCEL'; %EXCEL or YAML

@@ -1,17 +1,34 @@
-modules_path = 'CryoGrid/modules';
-addpath(genpath(modules_path));
+source_path = 'source';
+addpath(genpath(source_path));
 
-init_format = 'EXCEL'; %EXCEL or YAML
-run_name = 'test'; %parameter file name and result directory 
+%-----------------------------
+% modified by user
+%init_format = 'EXCEL3D'; %EXCEL or YAML
+init_format = 'EXCEL';
+%run_name = 'Paiku'; %parameter file name and result directory 
+%run_name = 'Herschell_test';
+%run_name = 'ExperimentHansen2004';
+%run_name = 'test_salt';
+%run_name = 'revision_paper_juditha';
+run_name = 'example2';
+%run_name = 'test_forcing_spinup';
+run_name = 'test_BGC_4';
 constant_file = 'CONSTANTS_excel'; %file with constants
-result_path = './results/';  %with trailing backslash
-forcing_path = fullfile('./forcing/');
+result_path = '../results/';  %with trailing backslash
+%forcing_path = fullfile ('./forcing/');
+% end modified by user
+%------------------------
 
-pprovider = PPROVIDER_EXCEL(run_name, result_path, constant_file, forcing_path);
-pprovider = read_const(pprovider);
-pprovider = read_parameters(pprovider);
+%providers
+provider = PROVIDER;
+provider = assign_paths(provider, init_format, run_name, result_path, constant_file);
+provider = read_const(provider);
+provider = read_parameters(provider);
 
-%creates the RUN_INFO class
-[run_info, pprovider] = run(pprovider);
-[run_info, tile] = run(run_info);
+
+% %creates the RUN_INFO class
+ [run_info, provider] = run_model(provider);
+
+ [run_info, tile] = run_model(run_info);
+
 

@@ -1,21 +1,16 @@
-source_path = 'source';
+source_path = '../CryoGrid/source';
 addpath(genpath(source_path));
 
 %-----------------------------
 % modified by user
 %init_format = 'EXCEL3D'; %EXCEL or YAML
 init_format = 'EXCEL';
-%run_name = 'Paiku'; %parameter file name and result directory 
-%run_name = 'Herschell_test';
-%run_name = 'ExperimentHansen2004';
-%run_name = 'test_salt';
-%run_name = 'revision_paper_juditha';
-run_name = 'example2';
-%run_name = 'test_forcing_spinup';
-run_name = 'test_BGC_4';
+
+run_name = 'example3';
+
 constant_file = 'CONSTANTS_excel'; %file with constants
-result_path = '../results/';  %with trailing backslash
-%forcing_path = fullfile ('./forcing/');
+result_path = './results/';  %with trailing backslash
+
 % end modified by user
 %------------------------
 

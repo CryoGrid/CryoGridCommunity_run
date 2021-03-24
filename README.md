@@ -1,41 +1,13 @@
 # CryoGridExamples
 
-Download the CryoGrid example code, parameter files and forcing files. Click the green `code` button and choose `Download Zip`. See screenshot below.
-(In the upper left hand corner, make sure the `develop/main` branch is selected).
+This repository contains user-adjustable files needed to run the community version of *CryoGrid*.
 
-![screenshot](./readme_im1.png)
+*Note: This is the latest major version of the CryoGrid model family. It comprises the functionalities of previous versions including [CryoGrid3](https://github.com/CryoGrid/CryoGrid3), which we no longer encourage to be used.*
 
-Unzip the the contents to your preferred folder, f.ex. `c:\my_matlab_code\cryogrid\`.
-You will now have the following folder structure: `c:\my_matlab_code\cryogrid\CryoGridExamples-develop-main`.
-Rename this folder `CryoGridExamples`:
+## Documentation
 
-```
-rename c:\my_matlab_code\cryogrid\CryoGridExamples-develop-main c:\my_matlab_code\cryogrid\CryoGridExamples
-```
+The documentation of *CryoGrid* is hosted on [ReadTheDocs](https://cryogrid-documentation.readthedocs.io/en/latest/). 
 
-Then get the main CryoGrid code  from the separate github repository [CryoGrid/CryoGrid](https://github.com/CryoGrid/CryoGrid/tree/develop/main). Make sure to retrive the `develop/main` branch. Follow download instructions given in the CryoGrid repository to download the code and run the test model.
+## Getting started
 
-### Using git
-
-Alternatively, you can obtain the code using git. To run example model:
-
-1. Clone the CryoGridExamples repository to a new directory (fx `c:\my_matlab_code\cryogrid`): 
-
-```
-git clone --single-branch --branch develop/main https://github.com/CryoGrid/CryoGridExamples.git
-```
-
-2. Navigate into the new directory `c:\my_matlab_code\cryogrid\CryoGridExamples`
-
-```
-cd c:\my_matlab_code\cryogrid\CryoGridExamples
-```
-
-3. Clone the main CryoGrid model code
-
-```
-git clone --single-branch --branch develop/main https://github.com/CryoGrid/CryoGrid.git
-```
-
-Start MatLab, navigate to ```c:\my_matlab_code\cryogrid\CryoGridExamples```, and run `run_CG`.
-See main CryoGrid repository ([CryoGrid/CryoGrid](https://github.com/CryoGrid/CryoGrid/tree/develop/main)) for furhter instructions.
+In order to run *CryoGrid*, additional source code needs to be obtained from the repository [CryoGrid](https://github.com/CryoGrid/CryoGrid). See [this section](https://cryogrid-documentation.readthedocs.io/en/latest/source/Quick%20start.html#get-started-getting-code-and-examples-for-running-your-first-model) in the documentation for detailed instructions on how to set up the model code and how to run first simulations.

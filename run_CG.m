@@ -1,5 +1,4 @@
-source_path = '../CryoGrid/source';
-addpath(genpath(source_path));
+set_CryoGridPath;
 
 %-----------------------------
 % modified by user

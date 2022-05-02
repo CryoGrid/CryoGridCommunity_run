@@ -1,13 +1,13 @@
-# CryoGridExamples
+# CryoGrid community model
 
-This repository contains user-adjustable files needed to run the community version of *CryoGrid*.
+This is the community version of *CryoGrid*, a numerical model to investigate land surface processes in the terrestrial cryosphere. This version of *CryoGrid* is implemented in MATLAB.
 
-*Note: This is the latest major version of the CryoGrid model family. It comprises the functionalities of previous versions including [CryoGrid3](https://github.com/CryoGrid/CryoGrid3), which we no longer encourage to be used.*
+*Note: This is the latest development of the CryoGrid model family. It comprises the functionalities of previous versions including [CryoGrid3](https://github.com/CryoGrid/CryoGrid3), which is no longer encouraged to be used.*
 
 ## Documentation
 
-The documentation of *CryoGrid* is hosted on [ReadTheDocs](https://cryogrid-documentation.readthedocs.io/en/latest/). 
+A manuscript "The CryoGrid community model - a multi-physics toolbox for climate-driven simulations in the terrestrial cryosphere" has been submitted to the journal  Geoscientific Model Development (GMD) which contains a detailed description of the model and instructions to run it (Supplements 1, 3).
 
 ## Getting started
 
-In order to run *CryoGrid*, additional source code needs to be obtained from the repository [CryoGrid](https://github.com/CryoGrid/CryoGrid). See [this section](https://cryogrid-documentation.readthedocs.io/en/latest/source/Quick%20start.html#get-started-getting-code-and-examples-for-running-your-first-model) in the documentation for detailed instructions on how to set up the model code and how to run first simulations.
+Both [CryoGridCommunity_source](https://github.com/CryoGrid/CryoGridCommunity_source) and [CryoGridCommunity_run](https://github.com/CryoGrid/CryoGridCommunity_run) are required and must be downloaded in the same folder. [CryoGridCommunity_source](https://github.com/CryoGrid/CryoGridCommunity_source) contains the model source code which users should not modify. [CryoGridCommunity_run](https://github.com/CryoGrid/CryoGridCommunity_run) contains the files that must be edited by the user. The script "run_CG.m" is used to start a simulation with the CryoGrid community model, and the user has to specify the name and location of a parameter file which controls all aspects of the model run (see GMD manuscript and Suppl. 1 for details). In addition, a script for displaying key variables of the model output (read_output_and_display.m), and a script to automatically create parameter files in spreadsheet format (create_parameter_file_EXCEL.m) are provided.

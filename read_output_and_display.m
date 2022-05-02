@@ -1,21 +1,25 @@
-%function result = read_display_out()
+%run header first
 
-%interpolates the given target variables to the variable "new_grid" and
-%displays them as color plots
+source_path = '../CryoGridCommunity_source/source'; 
+addpath(genpath(source_path));
 
-% modules_path = 'modules';
-% addpath(genpath(modules_path));
-% 
-% result_path = '../results/';
-% run_number = 'example2';
-% out_timstamp = '19820901';
-% 
-% load([result_path run_number '/' run_number '_' out_timstamp '.mat'])
+%then load an output file produced by an OUT_all or OUT_all_lateral class
+%%
 
-%define the grid to which variables are interpolated
+%user-modified part
+
+surface_altitude = 20; %in m a.s.l., should normally match the the parameter "altitude" in TILE_1D_standard 
+start_height_above_ground = 1; %in m
+end_depth_below_ground = 3; %in m
+
+%end user-modified part
+
+source_path = '../CryoGridCommunity_source/source'; 
+source_path = '../CryoGrid/source'; 
+addpath(genpath(source_path));
+
 target_cell_size = 0.02;
-new_grid = 20 + [-9:target_cell_size:1]';
-%new_grid = [15:target_cell_size:21]';
+new_grid = surface_altitude - [-start_height_above_ground:target_cell_size:end_depth_below_ground]';
 threshold = target_cell_size/10;  
 
 %define target variables
@@ -23,12 +27,10 @@ result.T = [];
 result.waterIce =[];
 result.water = [];
 result.ice = [];
-  result.Xice = [];
-  result.Xwater = [];
-  result.XwaterIce = [];
-  result.waterPotential = [];
-result.saltConc = [];
-result.salt_c_brine=[];
+%result.Xice = [];
+%result.Xwater = [];
+%result.XwaterIce = [];
+%result.waterPotential = [];
 result.class_number = [];
 %must all have the same dimensions in all fields
 
@@ -114,7 +116,9 @@ end
 %plot
 for i=1:numberOfVariables
     figure
-    imagesc(out.TIMESTAMP, new_grid, result.(variableList{i,1}))
+    imAlpha = result.(variableList{i,1}) .*0 +1;
+    imAlpha(isnan(result.(variableList{i,1})))= 0;
+    imagesc(out.TIMESTAMP, new_grid, result.(variableList{i,1}),'AlphaData',imAlpha);
     axis xy
     datetick
     title(variableList{i,1})
